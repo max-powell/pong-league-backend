@@ -6,6 +6,8 @@ class PlayersController < ApplicationController
     end
 
     def create
+        player = Player.create(name: params[:name], image_url: params[:image_url])
+        render json: player
     end
 
 
