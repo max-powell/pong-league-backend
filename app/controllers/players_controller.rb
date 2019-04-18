@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
     def index
-        all_players = Player.all
+        all_players = Player.all.sort_by{|p| p.wins.count}.reverse
         render json: all_players
     end
 
